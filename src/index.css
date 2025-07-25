@@ -1,0 +1,88 @@
+@import "tailwindcss";
+/* Custom animations: */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-animation {
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+.navlink-underline {
+  position: relative;
+}
+
+.navlink-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+
+.navlink-underline:hover::after,
+.navlink-underline.active::after {
+  width: 100%;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+
+
+.video-section{
+
+  width: 100%;
+  height: 25rem;
+
+  animation: anime 1s ease-in-out forwards;
+}
+
+@keyframes anime{
+  0%{
+    width:4px;
+    height: 0rem;
+  }
+  100%{
+    width: 100%;
+    height: 25rem;
+  }
+}
+
+
