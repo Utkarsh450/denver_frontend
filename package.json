@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.35.3",
     "@heroicons/react": "^2.2.0",
+    "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/vite": "^4.1.11",
     "axios": "^1.10.0",
     "clsx": "^2.1.1",
