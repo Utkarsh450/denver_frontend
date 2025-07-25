@@ -159,71 +159,89 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="bg-gray-50 min-h-screen p-8">
-        <motion.div
-         initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-6xl mx-auto">
-          {/* Header Section */}
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h1 className="text-5xl font-light text-gray-800 mb-2">
-                Get 15% Off In
-              </h1>
-              <p className="text-3xl font-light text-gray-400">
-                Seasonal Product
-              </p>
-            </div>
-            <div className="w-24 h-24 bg-gray-300 overflow-hidden rounded-full flex items-center justify-center">
-              <img className="w-full h-full object-cover" src="https://denverformen.com/cdn/shop/files/Autograph-Collection-20ml-Flipkart-Listing-Image-01.jpg?v=1742626648&width=600" alt="" />
-            </div>
-          </div>
+     <section className="bg-gray-50 min-h-screen px-4 py-12">
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="max-w-6xl mx-auto"
+  >
+    {/* Header Section */}
+    <div className="flex flex-col sm:flex-row items-center justify-between mb-12 gap-6 sm:gap-0">
+      <div className="text-center sm:text-left">
+        <h1 className="text-3xl sm:text-5xl font-light text-gray-800 mb-2">
+          Get 15% Off In
+        </h1>
+        <p className="text-xl sm:text-3xl font-light text-gray-400">
+          Seasonal Product
+        </p>
+      </div>
+      <div className="w-24 h-24 bg-gray-300 overflow-hidden rounded-full flex items-center justify-center shrink-0">
+        <img
+          className="w-full h-full object-cover"
+          src="https://denverformen.com/cdn/shop/files/Autograph-Collection-20ml-Flipkart-Listing-Image-01.jpg?v=1742626648&width=600"
+          alt=""
+        />
+      </div>
+    </div>
 
-          {/* Main Product Section */}
-          <div className="flex items-center gap-16">
-            {/* Product Image */}
-            <div className="flex-1">
-              <div className="relative bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600 rounded-3xl h-96 flex items-center justify-center overflow-hidden">
+    {/* Main Product Section */}
+    <div className="flex flex-col lg:flex-row items-center gap-12">
+      {/* Product Image */}
+      <div className="w-full lg:w-1/2">
+        <div className="relative bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600 rounded-3xl h-80 sm:h-96 flex items-center justify-center overflow-hidden">
+          <img
+            className="w-full h-full object-cover"
+            src="https://denverformen.com/cdn/shop/files/Dream_100ml.png?v=1737460532&width=600"
+            alt=""
+          />
+          {/* Ambient lighting effect */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-40 h-20 bg-gradient-radial from-amber-300/20 to-transparent rounded-full blur-xl"></div>
+        </div>
+      </div>
 
-                {/* Perfume Bottle */}
-                <img className="w-full h-full object-cover" src="https://denverformen.com/cdn/shop/files/Dream_100ml.png?v=1737460532&width=600" alt="" />
+      {/* Product Details */}
+      <div className="w-full lg:w-1/2">
+        <h2 className="text-2xl sm:text-4xl font-light text-gray-800 mb-4">
+          Oz Body Lotion (Unboxed)
+        </h2>
 
-                {/* Ambient lighting effect */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-40 h-20 bg-gradient-radial from-amber-300/20 to-transparent rounded-full blur-xl"></div>
-              </div>
-            </div>
+        <div className="flex flex-wrap items-center gap-4 mb-6">
+          <span className="text-xl sm:text-2xl font-light text-gray-600">
+            From ₹ 44615
+          </span>
+          <span className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
+            05 Stock
+          </span>
+        </div>
 
-            {/* Product Details */}
-            <div className="flex-1 pl-8">
-              <h2 className="text-4xl font-light text-gray-800 mb-6">
-                Oz Body Lotion (Unboxed)
-              </h2>
+        <p className="text-gray-600 leading-relaxed mb-6 text-base sm:text-lg">
+          Step into Step into each one of them new. Suddenly take tones,
+          just like someone is around you in a clean. That perfect
+          condition. Dil Yeh New. Forever! That Hag Sweet sensation and no
+          you.
+        </p>
 
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-2xl font-light text-gray-600">
-                  From ₹ 44615
-                </span>
-                <span className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
-                  05 Stock
-                </span>
-              </div>
+        {user ? (
+          <Link
+            to={`/products/3`}
+            className="bg-gray-800 text-white px-8 py-3 rounded-full text-base sm:text-lg font-medium hover:bg-gray-700 transition-colors duration-200"
+          >
+            Buy Now
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            className="bg-gray-800 text-white px-8 py-3 rounded-full text-base sm:text-lg font-medium hover:bg-gray-700 transition-colors duration-200"
+          >
+            Login to Buy
+          </Link>
+        )}
+      </div>
+    </div>
+  </motion.div>
+</section>
 
-              <p className="text-gray-600 leading-relaxed mb-8 text-lg">
-                Step into Step into each one of them new. Suddenly take tones,
-                just like someone is around you in a clean. That perfect
-                condition. Dil Yeh New. Forever! That Hag Sweet sensation and no
-                you.
-              </p>
-{ user ? <>
-         <Link to={`/products/3`} className="bg-gray-800 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-700 transition-colors duration-200">
-                Buy Now
-              </Link>
-
-</> : <Link to="/login" className="bg-gray-800 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-700 transition-colors duration-200">Login to Buy</Link>    }
-            </div>
-          </div>
-        </motion.div>
-      </section>
 
       <section className="relative bg-white dark:bg-black min-h-screen flex flex-col justify-center items-center overflow-hidden px-4 md:px-8 py-24">
         {/* === Hero Text === */}
